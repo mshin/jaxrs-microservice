@@ -1,0 +1,29 @@
+# Git
+.gitignore
+.gitattributes
+
+# Eclipse
+.project
+.settings
+.classpath
+.settings/**
+
+# Netbeans
+/nbproject
+
+# Misc IDE
+/*.ipr
+/*.iws
+
+# Intellij IDEA
+.idea
+/*.iml
+
+# Mac OS 
+.DS_Store
+
+# Maven
+**/target/*
+**/bin/*
+/local
+dependency-reduced-pom.xml
