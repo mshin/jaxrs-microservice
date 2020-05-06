@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:camel="http://camel.apache.org/schema/spring" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd     http://camel.apache.org/schema/spring     http://camel.apache.org/schema/spring/camel-spring.xsd     http://www.springframework.org/schema/context     http://www.springframework.org/schema/context/spring-context-3.1.xsd     http://www.springframework.org/schema/tx     http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Allows use of Spring annotation -->
+    <context:annotation-config />
+
+    <!-- Camel Service and Route Configuration -->
+    <!-- ===================================== -->
+
+    <camel:camelContext id="camelContext">
+        <camel:contextScan />
+    </camel:camelContext>
+
+    <bean class="io.swagger.models.Info" id="swaggerInfo">
+        <property name="description" value="This service will be used to greet service callers." />
+        <property name="version" value="${project.version}" />
+        <property name="title" value="Greet Microservice" />
+    </bean>
+    <bean class="io.swagger.jaxrs.listing.ApiListingResource" id="apiListingResourceJSON" />
+    <bean class="io.swagger.jaxrs.listing.SwaggerSerializers" id="apiDeclarationProvider" />
+    <bean class="io.swagger.jaxrs.config.BeanConfig" id="swaggerConfig">
+        <property name="schemes" value="${schemes}" />
+        <property name="host" value="${host}" />
+        <property name="basePath" value="/api" />
+        <property name="prettyPrint" value="true" />
+        <property name="resourcePackage" value="com.github.mshin.jaxrms.spring.camel.eap" />
+        <property name="scan" value="true" />
+        <property name="info" ref="swaggerInfo" />
+    </bean>
+
+    <beans profile="local">
+        <context:property-placeholder
+            location="classpath:properties/local.properties" />
+    </beans>
+    <beans profile="dev">
+        <context:property-placeholder
+            location="classpath:properties/dev.properties" />
+    </beans>
+    <beans profile="prod">
+        <context:property-placeholder
+            location="classpath:properties/prod.properties" />
+    </beans>
+</beans>

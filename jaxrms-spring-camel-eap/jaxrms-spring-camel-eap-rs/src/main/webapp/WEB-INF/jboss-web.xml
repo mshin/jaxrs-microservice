@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>jaxrms-spring-camel-eap-rs</context-root>
+</jboss-web>
