@@ -5,7 +5,7 @@
 
     <groupId>com.github.mshin</groupId>
     <artifactId>jaxrms-spring-camel-eap-rs</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>war</packaging>
 
     <properties>
@@ -14,7 +14,8 @@
         <version.eap>7.3.0.GA</version.eap>
         <version.spring>4.3.10.RELEASE</version.spring>
         <version.camel>2.21.0.fuse-760027-redhat-00001</version.camel>
-        <version.exception.response>1.0.0</version.exception.response>
+        <version.exception.response>1.0.1</version.exception.response>
+        <version.jaxrms.rs.api>1.0.1</version.jaxrms.rs.api>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +35,7 @@
         <dependency>
             <groupId>com.github.mshin</groupId>
             <artifactId>jaxrms-rs-api</artifactId>
-            <version>${project.version}</version>
+            <version>${version.jaxrms.rs.api}</version>
         </dependency>
 
         <dependency>
