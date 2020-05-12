@@ -5,19 +5,28 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author MunChul Shin
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 public class GetGreetingResponse {
 
+    @JsonProperty("greeting")
+    @JsonPropertyDescription("The greeting.")
     @XmlElement
     @ApiModelProperty(value = "The greeting.")
     private String greeting;
     
+    @JsonProperty("responseCode")
+    @JsonPropertyDescription("0 is success, otherwise failure.")
     @XmlElement
     @ApiModelProperty(value = "0 is success, otherwise failure.")
     private Integer responseCode;

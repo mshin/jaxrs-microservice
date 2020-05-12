@@ -5,15 +5,22 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyDescription;
+
 import io.swagger.annotations.ApiModelProperty;
 
 /**
  * @author MunChul Shin
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement
 public class GetGreetingRequest {
 
+    @JsonProperty("name")
+    @JsonPropertyDescription("The name to be greeted.")
     @XmlElement
     @ApiModelProperty(value = "The name to be greeted.")
     private String name;
