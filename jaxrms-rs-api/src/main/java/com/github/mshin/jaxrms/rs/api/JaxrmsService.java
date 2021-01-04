@@ -36,15 +36,11 @@ public interface JaxrmsService {
             throws ExceptionResponses;
 
     @GET
-    @Path("/ping/{string}")
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/ping")
+    @ApiOperation(value = "This API method will be used to ping the service to verify it is working.")
     @Produces(MediaType.TEXT_PLAIN)
-    public String getPing(@PathParam("string") String pingString);
-
-    @GET
-    @Path("/ping1")
-    default public String ping1() {
-        return "ping1";
+    default public String ping() {
+        return "ping";
     }
 
 }

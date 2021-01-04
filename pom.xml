@@ -10,6 +10,7 @@
 
     <modules>
         <module>jaxrms-rs-api</module>
+        <module>jaxrms-crud-rs-api</module>
         <module>example-archetype-generated-microservice</module>
         <module>jaxrms-spring-eap</module>
         <module>jaxrms-spring-camel-eap</module>
