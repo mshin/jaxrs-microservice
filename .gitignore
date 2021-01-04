@@ -27,3 +27,5 @@
 **/bin/*
 /local
 dependency-reduced-pom.xml
+
+**/MANIFEST.MF

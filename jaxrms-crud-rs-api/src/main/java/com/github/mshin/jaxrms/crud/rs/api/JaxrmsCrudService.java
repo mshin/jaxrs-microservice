@@ -56,7 +56,7 @@ public interface JaxrmsCrudService {
     @Path("/delete/{id}")
     @ApiOperation(value = "This API method will be used to delete a name record.")
     @Produces(MediaType.TEXT_PLAIN)
-    public String deleteName();
+    public String deleteName(@PathParam("id") String id);
 
     @GET
     @Path("/ping")
