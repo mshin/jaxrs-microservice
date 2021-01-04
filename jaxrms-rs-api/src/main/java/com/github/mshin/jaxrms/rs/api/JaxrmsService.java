@@ -1,8 +1,10 @@
 package com.github.mshin.jaxrms.rs.api;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -32,5 +34,17 @@ public interface JaxrmsService {
     public GetGreetingResponse getGreeting(
             @ApiParam(required = true, name = "GetGreetingRequest", value = "The request to greet the passed name") GetGreetingRequest getGreetingRequest)
             throws ExceptionResponses;
+
+    @GET
+    @Path("/ping/{string}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getPing(@PathParam("string") String pingString);
+
+    @GET
+    @Path("/ping1")
+    default public String ping1() {
+        return "ping1";
+    }
 
 }
