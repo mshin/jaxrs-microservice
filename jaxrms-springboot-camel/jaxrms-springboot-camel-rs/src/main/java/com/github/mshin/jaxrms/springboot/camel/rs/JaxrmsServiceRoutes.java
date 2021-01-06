@@ -19,10 +19,13 @@ public class JaxrmsServiceRoutes extends RouteBuilder {
     public void configure() throws Exception {
         // @formatter:off
         from("cxfrs:bean:rsServer?bindingStyle=SimpleConsumer").routeId("jaxrmsGreetingRoute")
-                .log("headers: ${in.headers}").log("body: ${body}").choice().when(header("operationName").isEqualTo("getGreeting}"))
-                .to("bean:jaxrmsServiceBean?method=getGreeting(${body})").when(header("operationName").isEqualTo("getPing"))
-                .to("bean:jaxrmsServiceBean?method=getPing(${body})").when(header("operationName").isEqualTo("ping1"))
-                .to("bean:jaxrmsServiceBean?method=ping1(${body})");
+            .log("headers: ${in.headers}").log("body: ${body}")
+            .choice()
+                .when(header("operationName").isEqualTo("getGreeting"))
+                    .bean(jaxrmsServiceBean, "getGreeting(${body})")
+                //.to("bean:jaxrmsServiceBean?method=getGreeting(${body})")
+                .when(header("operationName").isEqualTo("ping"))
+                    .to("bean:jaxrmsServiceBean?method=ping(${body})");
         // @formatter:on
 
     }

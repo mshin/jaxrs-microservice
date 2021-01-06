@@ -17,7 +17,4 @@ public class JaxrmsServiceBean implements JaxrmsService {
         return response;
     }
 
-    public String getPing(String pingString) {
-        return pingString;
-    }
 }

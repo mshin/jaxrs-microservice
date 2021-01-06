@@ -12,16 +12,25 @@ import org.apache.camel.test.spring.DisableJmx;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
+/**
+ * 
+ * @author MunChul Shin
+ *
+ */
 @RunWith(CamelSpringBootRunner.class)
 @SpringBootTest
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
 @DisableJmx(true)
 public class JaxrmsServiceRoutesTest {
+
+    public static final Logger LOGGER = LoggerFactory.getLogger(JaxrmsServiceRoutesTest.class.getName());
 
     @Autowired
     ModelCamelContext camelContext;
