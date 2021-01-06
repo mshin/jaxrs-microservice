@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.github.mshin.exception.response.handler.ExceptionResponseHandler;
+import com.github.mshin.exception.response.handler.ExceptionResponsesHandler;
 
 @SpringBootApplication
 public class Application {
@@ -31,7 +33,8 @@ public class Application {
         JAXRSServerFactoryBean factoryBean = new JAXRSServerFactoryBean();
         factoryBean.setBus(bus);
         factoryBean.setAddress("/");
-        factoryBean.setProviders(Arrays.asList(new JacksonJsonProvider()));
+        factoryBean.setProviders(Arrays.asList(new ExceptionResponseHandler(), new ExceptionResponsesHandler(),
+                new JacksonJsonProvider()));
         factoryBean.setFeatures(Arrays.asList(new Swagger2Feature()));
         factoryBean.setServiceBeans(Arrays.asList(jaxrmsCrudServiceBean));
         return factoryBean.create();

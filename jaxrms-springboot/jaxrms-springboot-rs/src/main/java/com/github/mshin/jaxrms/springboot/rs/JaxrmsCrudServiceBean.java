@@ -68,6 +68,10 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
 
     @Override
     public String getName(String id) {
+        if (null == id) {
+            throw new ExceptionResponses(
+                    new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "null id"));
+        }
         Integer idInt = null;
         try {
             idInt = Integer.parseInt(id);
@@ -81,6 +85,10 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
 
     @Override
     public String deleteName(String id) {
+        if (null == id) {
+            throw new ExceptionResponses(
+                    new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "null id"));
+        }
         Integer idInt = null;
         try {
             idInt = Integer.parseInt(id);

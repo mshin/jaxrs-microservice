@@ -49,6 +49,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.github.mshin</groupId>
+            <artifactId>exception-response-handler</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-spring-boot-starter-jaxrs</artifactId>
         </dependency>
