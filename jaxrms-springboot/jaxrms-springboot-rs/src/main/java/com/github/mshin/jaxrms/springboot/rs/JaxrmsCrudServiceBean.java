@@ -15,6 +15,7 @@ import com.github.mshin.jaxrms.crud.rs.api.JaxrmsCrudService;
 import com.github.mshin.jaxrms.crud.rs.api.model.PostNameRequest;
 import com.github.mshin.jaxrms.crud.rs.api.model.PostNameResponse;
 import com.github.mshin.jaxrms.crud.rs.api.model.PutNameRequest;
+import com.github.mshin.jaxrms.crud.rs.api.model.ResponseMessage;
 
 @Component
 public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
@@ -45,7 +46,7 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
     }
 
     @Override
-    public String putName(String id, PutNameRequest putNameRequest) throws ExceptionResponses {
+    public ResponseMessage putName(String id, PutNameRequest putNameRequest) throws ExceptionResponses {
         if (null == putNameRequest) {
             throw new ExceptionResponses(
                     new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "null name request"));
@@ -63,11 +64,11 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
         }
         String previousVal = inMemoryNameDb.put(idInt, putNameRequest.getName());
 
-        return "Previous value: " + previousVal + " new value: " + putNameRequest.getName();
+        return new ResponseMessage("Previous value: " + previousVal + " new value: " + putNameRequest.getName());
     }
 
     @Override
-    public String getName(String id) {
+    public ResponseMessage getName(String id) {
         if (null == id) {
             throw new ExceptionResponses(
                     new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "null id"));
@@ -80,11 +81,11 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
                     new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "non numeric id: " + id, nfe));
         }
         String name = inMemoryNameDb.get(idInt);
-        return name;
+        return new ResponseMessage(name);
     }
 
     @Override
-    public String deleteName(String id) {
+    public ResponseMessage deleteName(String id) {
         if (null == id) {
             throw new ExceptionResponses(
                     new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "null id"));
@@ -97,7 +98,7 @@ public class JaxrmsCrudServiceBean implements JaxrmsCrudService {
                     new ExceptionResponse(Response.Status.BAD_REQUEST, "invalidRequest", "non numeric id: " + id, nfe));
         }
         String nameRemoved = inMemoryNameDb.remove(idInt);
-        return "Removed value: " + nameRemoved;
+        return new ResponseMessage("Removed value: " + nameRemoved);
     }
 
 }

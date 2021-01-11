@@ -4,8 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.mshin</groupId>
-    <artifactId>example-archetype-generated-microservice</artifactId>
+    <artifactId>jaxrms-marshaling</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>jaxrms-json-sbc-rs</module>
+        <module>jaxrms-xml-sbc-rs</module>
+        <module>jaxrms-xmlandjson-sbc-rs</module>
+    </modules>
 </project>

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.mshin</groupId>
-    <artifactId>jaxrms-springboot-camel-rs</artifactId>
+    <artifactId>jaxrms-json-sbc-rs</artifactId>
     <version>1.0.0</version>
 
     <properties>
@@ -47,7 +47,7 @@
     <dependencies>
         <dependency>
             <groupId>com.github.mshin</groupId>
-            <artifactId>jaxrms-rs-api</artifactId>
+            <artifactId>jaxrms-json-rs-api</artifactId>
             <version>1.0.3</version>
         </dependency>
 
@@ -89,9 +89,6 @@
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
             <artifactId>jackson-jaxrs-json-provider</artifactId>
         </dependency>
-
-        <!-- <dependency> <groupId>com.sun.xml.bind</groupId> <artifactId>jaxb-impl</artifactId> 
-            </dependency> -->
 
         <dependency>
             <groupId>org.apache.cxf</groupId>

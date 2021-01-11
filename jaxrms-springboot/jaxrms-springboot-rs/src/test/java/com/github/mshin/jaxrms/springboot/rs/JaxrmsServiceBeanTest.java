@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.github.mshin.jaxrms.crud.rs.api.model.PostNameRequest;
 import com.github.mshin.jaxrms.crud.rs.api.model.PostNameResponse;
 import com.github.mshin.jaxrms.crud.rs.api.model.PutNameRequest;
+import com.github.mshin.jaxrms.crud.rs.api.model.ResponseMessage;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -45,27 +46,28 @@ public class JaxrmsServiceBeanTest {
         // fail test if exception thrown here.
         Integer.parseInt(id);
 
-        String nameReturned = bean.getName(id);
+        ResponseMessage nameReturned = bean.getName(id);
 
-        assertTrue("Me".equals(nameReturned));
+        assertTrue("Me".equals(nameReturned.getResponse()));
     }
 
     public void updateAndGetTest() {
         LOGGER.info("update id: " + id);
         PutNameRequest request = new PutNameRequest();
         request.setName("You");
-        String response = bean.putName(id, request);
+        ResponseMessage response = bean.putName(id, request);
         LOGGER.info("updateTest response: " + response);
-        String nameReturned = bean.getName(id);
+        ResponseMessage nameReturned = bean.getName(id);
 
-        assertTrue("You".equals(nameReturned));
+        assertTrue("You".equals(nameReturned.getResponse()));
     }
 
     public void deleteAndGetTest() {
-        String response = bean.deleteName(id);
+        ResponseMessage response = bean.deleteName(id);
         LOGGER.info("deleteTest response: " + response);
 
-        String nameReturned = bean.getName(id);
-        assertTrue(null == nameReturned || "".equals(nameReturned));
+        ResponseMessage nameReturned = bean.getName(id);
+        LOGGER.info("nameReturned: " + nameReturned);
+        assertTrue(null == nameReturned || null == nameReturned.getResponse() || "".equals(nameReturned.getResponse()));
     }
 }

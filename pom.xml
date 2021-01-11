@@ -10,7 +10,7 @@
 
     <modules>
         <module>jaxrms-api</module>
-        <module>example-archetype-generated-microservice</module>
+        <module>jaxrms-marshaling</module>
         <module>jaxrms-spring-eap</module>
         <module>jaxrms-spring-camel-eap</module>
         <module>jaxrms-cdi-eap</module>
