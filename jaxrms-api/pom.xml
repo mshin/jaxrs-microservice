@@ -5,7 +5,7 @@
 
     <groupId>com.github.mshin</groupId>
     <artifactId>jaxrms-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
 
     <modules>

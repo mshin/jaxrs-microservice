@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement
+@XmlRootElement(name = "GetGreetingRequest")
 public class GetGreetingRequest {
 
     @JsonProperty("name")

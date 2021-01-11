@@ -11,7 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @author MunChul Shin
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement
+@XmlRootElement(name = "GetGreetingResponse")
 public class GetGreetingResponse {
 
     @XmlElement

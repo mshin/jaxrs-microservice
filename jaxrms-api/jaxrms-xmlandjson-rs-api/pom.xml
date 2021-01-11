@@ -5,7 +5,7 @@
 
     <groupId>com.github.mshin</groupId>
     <artifactId>jaxrms-xmlandjson-rs-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <name>${project.artifactId}</name>
 
     <properties>
@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.github.mshin</groupId>
             <artifactId>exception-response-model</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.2</version>
         </dependency>
 
         <!-- All below dependencies are transitively brought in from exception-response-model.-->
