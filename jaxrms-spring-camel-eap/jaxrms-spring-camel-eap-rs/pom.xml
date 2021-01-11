@@ -5,15 +5,15 @@
 
     <groupId>com.github.mshin</groupId>
     <artifactId>jaxrms-spring-camel-eap-rs</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <version.eap>7.3.0.GA</version.eap>
-        <version.spring>4.3.10.RELEASE</version.spring>
-        <version.camel>2.21.0.fuse-760027-redhat-00001</version.camel>
+        <version.eap>7.3.4.GA</version.eap>
+        <version.spring>5.2.9.RELEASE</version.spring>
+        <version.camel>2.23.2.fuse-780036-redhat-00001</version.camel>
         <version.exception.response>1.0.2</version.exception.response>
         <version.jaxrms.rs.api>1.0.3</version.jaxrms.rs.api>
     </properties>
@@ -29,6 +29,8 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+<!-- https://maven.repository.redhat.com/ga/all/org/jboss/bom/eap-runtime-artifacts/7.3.4.GA -->
 
     <dependencies>
 
