@@ -14,7 +14,7 @@
         <version.eap>7.3.4.GA</version.eap>
         <version.spring>5.2.9.RELEASE</version.spring>
         <version.camel>2.23.2.fuse-780036-redhat-00001</version.camel>
-        <version.exception.response>1.0.2</version.exception.response>
+        <version.exception.response>1.0.3</version.exception.response>
         <version.jaxrms.rs.api>1.0.3</version.jaxrms.rs.api>
     </properties>
 
@@ -118,7 +118,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

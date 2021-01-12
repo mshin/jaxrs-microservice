@@ -51,7 +51,7 @@
         <dependency>
             <groupId>com.github.mshin</groupId>
             <artifactId>exception-response-handler</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
 
         <dependency>
